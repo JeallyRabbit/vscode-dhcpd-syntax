@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "dhcpd",
+  "scopeName": "source.dhcpd",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#host-blocks" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.dhcpd",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "host-blocks": {
+      "patterns": [
+        {
+          "name": "keyword.control.dhcpd" ,
+          "match": "\\bhost\\b"
+        },
+
+        {
+          "match": "\\bhost\\s+([A-Za-z0-9_-]+)",
+          "captures": {
+            "1": { "name": "support.type.property-name.dhcpd" }
+          }
+        },
+
+        {
+          "name": "support.type.property-name.dhcpd",
+          "match": "\\b(hardware\\s+ethernet|fixed-address)\\b"
+        },
+
+        {
+          "name": "constant.numeric.dhcpd",
+          "match": "\\b([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}\\b"
+        },
+
+        {
+          "name": "constant.numeric.dhcpd",
+          "match": "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        },
+
+        {
+          "name": "punctuation.section.block.begin.dhcpd",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.section.block.end.dhcpd",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.terminator.statement.dhcpd",
+          "match": ";"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "dhcpdsyntaxhighlighting",
+  "displayName": "dhcpdSyntaxHighlighting",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.1"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "dhcpd",
+      "aliases": ["dhcpd", "dhcpd"],
+      "extensions": ["dhcpd"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "dhcpd",
+      "scopeName": "source.dhcpd",
+      "path": "./syntaxes/dhcpd.tmLanguage.json"
+    }]
+  }
+}
